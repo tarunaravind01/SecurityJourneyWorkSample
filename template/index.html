@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SecurityJourney</title>
+  </head>
+  <body>
+    <h1>Upload Old giftcards - Recovery</h1>
+    <h2>This page is for recovering old corrupted giftcards from SecurityJourney</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <button type="submit">Upload</button>
+    </form>
+    {% if result %}
+    <div>
+      <h2>File Output:</h2>
+      <pre>{{ result }}</pre>
+    </div>
+    {% endif %}
+  </body>
+</html>

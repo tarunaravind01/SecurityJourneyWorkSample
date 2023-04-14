@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OS Command Injection -- Secured?</title>
+  </head>
+  <body>
+    <h1>Ping Results</h1>
+    <h2>The usual ping application to introduce OS Command Injection...But with a twist!!!</h2>
+    <form action="/pingSafe">
+      <label for="address">Enter an address to ping:</label>
+      <input type="text" id="address" name="address">
+      <button type="submit">Ping</button>
+    </form>
+    <h4>Try 8.8.8.8; cat /etc/passwd</h4>
+    <h4>This won't work because we are sanitizing our input, but are we doing it properly?</h4>
+    {% if result %}
+    <div>
+      <h2>Ping Output:</h2>
+      <pre>{{ result }}</pre>
+    </div>
+    {% endif %}
+  </body>
+</html>

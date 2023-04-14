@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OS Command Injection</title>
+  </head>
+  <body>
+    <h1>Ping Results</h1>
+    <h2>The usual ping application to introduce OS Command Injection...</h2>
+    <form action="/ping">
+      <label for="address">Enter an address to ping:</label>
+      <input type="text" id="address" name="address">
+      <button type="submit">Ping</button>
+    </form>
+    <h4>Try 8.8.8.8; cat /etc/passwd</h4>
+    {% if result %}
+    <div>
+      <h2>Ping Output:</h2>
+      <pre>{{ result }}</pre>
+    </div>
+    {% endif %}
+  </body>
+</html>
